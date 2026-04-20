@@ -25,28 +25,40 @@
             <div class="col-span-2 bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-xl">
                 <h2 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2"><i class="fa-solid fa-user-tie mr-2"></i>Target Role (Select One)</h2>
                 
-                <div class="mb-4">
-                    <p class="text-xs text-rose-400 mb-2 font-semibold">🔥 High Priority</p>
-                    <div class="flex flex-wrap gap-2" id="role-container">
-                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"IP Test Engineer" MPLS'>IP Test Engineer (MPLS)</button>
-                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Network Test Engineer" telecom'>Network Test Engineer</button>
-                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Technical Lead" MPLS BGP Juniper'>Technical Lead</button>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <p class="text-xs text-rose-400 mb-2 font-semibold">🔥 Core Test Roles</p>
+                        <div class="flex flex-col gap-2">
+                            <button class="role-btn text-left border border-slate-600 rounded px-3 py-1.5 text-xs text-slate-300 hover:border-emerald-500 transition-colors" data-val='"IP test engineer" MPLS BGP'>1. IP test engineer MPLS BGP</button>
+                            <button class="role-btn text-left border border-slate-600 rounded px-3 py-1.5 text-xs text-slate-300 hover:border-emerald-500 transition-colors" data-val='"network validation engineer" MPLS'>2. network validation engineer MPLS</button>
+                            <button class="role-btn text-left border border-slate-600 rounded px-3 py-1.5 text-xs text-slate-300 hover:border-emerald-500 transition-colors" data-val='"R&D test engineer" BGP OSPF MPLS'>4. R&D test engineer BGP OSPF MPLS</button>
+                        </div>
                     </div>
-                </div>
 
-                <div class="mb-4">
-                    <p class="text-xs text-amber-400 mb-2 font-semibold">⭐ Medium Priority</p>
-                    <div class="flex flex-wrap gap-2" id="role-container-med">
-                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Network Validation Engineer" MPLS'>Network Validation Engineer</button>
-                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Network Automation Engineer" Python telecom'>Network Auto. Engineer</button>
-                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Senior Network Engineer" MPLS BGP'>Sr Network Engineer</button>
-                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"IP Engineer" Ericsson Nokia Cisco'>IP Engineer</button>
+                    <div>
+                        <p class="text-xs text-amber-400 mb-2 font-semibold">⭐ Leadership & Architecture</p>
+                        <div class="flex flex-col gap-2">
+                            <button class="role-btn text-left border border-slate-600 rounded px-3 py-1.5 text-xs text-slate-300 hover:border-emerald-500 transition-colors" data-val='"technical lead" IP networking MPLS'>3. technical lead IP networking MPLS</button>
+                            <button class="role-btn text-left border border-slate-600 rounded px-3 py-1.5 text-xs text-slate-300 hover:border-emerald-500 transition-colors" data-val='"IP architect" MPLS BGP solution'>8. IP architect MPLS BGP solution</button>
+                        </div>
                     </div>
-                </div>
 
-                <div>
-                    <p class="text-xs text-blue-400 mb-2 font-semibold">💡 Broad</p>
-                    <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Network Engineer" SRv6 EVPN'>Network Engineer</button>
+                    <div>
+                        <p class="text-xs text-blue-400 mb-2 font-semibold">⚙️ Automation & Modern Protocols</p>
+                        <div class="flex flex-col gap-2">
+                            <button class="role-btn text-left border border-slate-600 rounded px-3 py-1.5 text-xs text-slate-300 hover:border-emerald-500 transition-colors" data-val='"network automation engineer" Python telecom'>5. network automation engineer Python telecom</button>
+                            <button class="role-btn text-left border border-slate-600 rounded px-3 py-1.5 text-xs text-slate-300 hover:border-emerald-500 transition-colors" data-val='EVPN VXLAN SRv6 "network engineer"'>6. EVPN VXLAN SRv6 network engineer</button>
+                        </div>
+                    </div>
+
+                    <div>
+                        <p class="text-xs text-purple-400 mb-2 font-semibold">🌐 Vendor & Carrier Specific</p>
+                        <div class="flex flex-col gap-2">
+                            <button class="role-btn text-left border border-slate-600 rounded px-3 py-1.5 text-xs text-slate-300 hover:border-emerald-500 transition-colors" data-val='"senior network engineer" Juniper Nokia Cisco'>7. senior network engineer Juniper Nokia Cisco</button>
+                            <button class="role-btn text-left border border-slate-600 rounded px-3 py-1.5 text-xs text-slate-300 hover:border-emerald-500 transition-colors" data-val='"telecom network engineer" MPLS IPSec VPN'>9. telecom network engineer MPLS IPSec VPN</button>
+                            <button class="role-btn text-left border border-slate-600 rounded px-3 py-1.5 text-xs text-slate-300 hover:border-emerald-500 transition-colors" data-val='Nokia Ericsson Cisco "network engineer" UK'>10. Nokia Ericsson Cisco network engineer UK</button>
+                        </div>
+                    </div>
                 </div>
             </div>
 
