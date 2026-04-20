@@ -44,10 +44,16 @@
                 <p class="text-sm text-slate-400"><i class="fa-solid fa-file-arrow-up mr-2"></i> Future Feature: Drop Resume to auto-calculate Match Score</p>
             </div>
 
-            <button id="generate-btn" class="mt-8 w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-lg transition-all shadow-lg shadow-blue-900/20 flex justify-center items-center">
-                <i class="fa-solid fa-magnifying-glass mr-2" id="btn-icon"></i> 
-                <span id="btn-text">GENERATE LEAD LIST</span>
-            </button>
+            <div class="mt-8 flex flex-col md:flex-row gap-4">
+                <button id="generate-btn" class="flex-1 bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 rounded-lg transition-all shadow-lg shadow-blue-900/20 flex justify-center items-center">
+                    <i class="fa-solid fa-magnifying-glass mr-2" id="btn-icon"></i> 
+                    <span id="btn-text">GENERATE LEAD LIST</span>
+                </button>
+                <button id="linkedin-direct-btn" class="flex-1 bg-[#0a66c2] hover:bg-[#084e96] text-white font-bold py-3 rounded-lg transition-all shadow-lg shadow-blue-900/20 flex justify-center items-center">
+                    <i class="fa-brands fa-linkedin mr-2"></i> 
+                    <span>1-CLICK: OPEN ON LINKEDIN</span>
+                </button>
+            </div>
         </div>
 
         <div id="job-count" class="mb-4 text-sm font-semibold text-emerald-400 hidden"></div>

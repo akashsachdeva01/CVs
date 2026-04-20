@@ -1,7 +1,19 @@
+// On page load, restore saved inputs
+window.addEventListener('DOMContentLoaded', () => {
+    if (localStorage.getItem('savedSkills')) document.getElementById('skills').value = localStorage.getItem('savedSkills');
+    if (localStorage.getItem('savedLocation')) document.getElementById('location').value = localStorage.getItem('savedLocation');
+    if (localStorage.getItem('savedExperience')) document.getElementById('min-experience').value = localStorage.getItem('savedExperience');
+});
+
 document.getElementById('generate-btn').addEventListener('click', async () => {
     const location = document.getElementById('location').value;
     const minExperience = document.getElementById('min-experience').value;
     const skills = document.getElementById('skills').value;
+    
+    // Save to localStorage
+    localStorage.setItem('savedSkills', skills);
+    localStorage.setItem('savedLocation', location);
+    localStorage.setItem('savedExperience', minExperience);
     
     const btnText = document.getElementById('btn-text');
     const btnIcon = document.getElementById('btn-icon');
@@ -131,3 +143,31 @@ function renderJobs(jobs) {
         tbody.appendChild(tr);
     });
 }
+
+document.getElementById('linkedin-direct-btn').addEventListener('click', () => {
+    const location = document.getElementById('location').value;
+    const minExperience = document.getElementById('min-experience').value;
+    const skills = document.getElementById('skills').value;
+    
+    // Save to localStorage
+    localStorage.setItem('savedSkills', skills);
+    localStorage.setItem('savedLocation', location);
+    localStorage.setItem('savedExperience', minExperience);
+    
+    if(!skills && !location) {
+        alert("Please enter some Required Protocols/Skills or Location first.");
+        return;
+    }
+    
+    // Construct LinkedIn Search URL natively using OR
+    const skillsList = skills.split(',').map(s => s.trim()).filter(s => s);
+    const searchQuery = skillsList.length > 0 ? skillsList.join(" OR ") : "";
+    
+    const queryLoc = encodeURIComponent(location);
+    const queryRole = encodeURIComponent(searchQuery);
+    
+    // Using past week (f_TPR=r604800) and sort by date (sortBy=DD) to match the scraper
+    const url = `https://uk.linkedin.com/jobs/search?keywords=${queryRole}&location=${queryLoc}&f_TPR=r604800&sortBy=DD`;
+    
+    window.open(url, '_blank');
+});
