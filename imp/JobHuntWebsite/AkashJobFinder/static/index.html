@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akash Sachdeva | Job Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        .chip-active { background-color: #3b82f6 !important; color: white !important; border-color: #3b82f6 !important; }
+        .role-btn-active { border-color: #10b981 !important; background-color: rgba(16, 185, 129, 0.1) !important; color: #10b981 !important; }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans p-6">
+
+    <div class="max-w-6xl mx-auto">
+        <div class="text-center mb-8">
+            <h1 class="text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-emerald-400 mb-2">AKASH SACHDEVA</h1>
+            <p class="text-slate-400 text-lg">Personalized LinkedIn Search Dashboard</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-8">
+            
+            <!-- SECTION A: ROLES -->
+            <div class="col-span-2 bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-xl">
+                <h2 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2"><i class="fa-solid fa-user-tie mr-2"></i>Target Role (Select One)</h2>
+                
+                <div class="mb-4">
+                    <p class="text-xs text-rose-400 mb-2 font-semibold">🔥 High Priority</p>
+                    <div class="flex flex-wrap gap-2" id="role-container">
+                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"IP Test Engineer" MPLS'>IP Test Engineer (MPLS)</button>
+                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Network Test Engineer" telecom'>Network Test Engineer</button>
+                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Technical Lead" MPLS BGP Juniper'>Technical Lead</button>
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <p class="text-xs text-amber-400 mb-2 font-semibold">⭐ Medium Priority</p>
+                    <div class="flex flex-wrap gap-2" id="role-container-med">
+                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Network Validation Engineer" MPLS'>Network Validation Engineer</button>
+                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Network Automation Engineer" Python telecom'>Network Auto. Engineer</button>
+                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Senior Network Engineer" MPLS BGP'>Sr Network Engineer</button>
+                        <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"IP Engineer" Ericsson Nokia Cisco'>IP Engineer</button>
+                    </div>
+                </div>
+
+                <div>
+                    <p class="text-xs text-blue-400 mb-2 font-semibold">💡 Broad</p>
+                    <button class="role-btn border border-slate-600 rounded px-4 py-2 text-sm text-slate-300 hover:border-emerald-500 transition-colors" data-val='"Network Engineer" SRv6 EVPN'>Network Engineer</button>
+                </div>
+            </div>
+
+            <!-- SECTION B & C: FILTERS -->
+            <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-xl space-y-6">
+                <div>
+                    <h2 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-3 border-b border-slate-700 pb-2"><i class="fa-solid fa-location-dot mr-2"></i>Location</h2>
+                    <div class="space-y-2 text-sm text-slate-300">
+                        <label class="flex items-center"><input type="radio" name="loc" value="United Kingdom" checked class="mr-2"> United Kingdom (All)</label>
+                        <label class="flex items-center"><input type="radio" name="loc" value="Reading, United Kingdom" class="mr-2"> Reading (Vodafone HQ)</label>
+                        <label class="flex items-center"><input type="radio" name="loc" value="London, United Kingdom" class="mr-2"> London</label>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-3 border-b border-slate-700 pb-2"><i class="fa-solid fa-briefcase mr-2"></i>Job Filters</h2>
+                    <div class="grid grid-cols-2 gap-4 text-sm text-slate-300">
+                        <div>
+                            <label class="flex items-center mb-1"><input type="checkbox" id="chk-ft" value="F" checked class="mr-2"> Full-time</label>
+                            <label class="flex items-center"><input type="checkbox" id="chk-ct" value="C" checked class="mr-2"> Contract</label>
+                        </div>
+                        <div>
+                            <label class="flex items-center mb-1"><input type="checkbox" id="chk-e4" value="4" checked class="mr-2"> Mid-Senior</label>
+                            <label class="flex items-center"><input type="checkbox" id="chk-e5" value="5" checked class="mr-2"> Director/Lead</label>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-3 border-b border-slate-700 pb-2"><i class="fa-regular fa-clock mr-2"></i>Date Posted</h2>
+                    <select id="date-posted" class="w-full bg-slate-900 border border-slate-600 rounded py-2 px-3 text-sm text-slate-200 outline-none">
+                        <option value="r86400">Past 24 Hours</option>
+                        <option value="r604800" selected>Past Week</option>
+                        <option value="r2592000">Past Month</option>
+                    </select>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- SECTION D: COMPANIES -->
+        <div class="bg-slate-800 border border-slate-700 rounded-xl p-6 shadow-xl mb-8">
+            <h2 class="text-sm font-bold text-slate-300 uppercase tracking-wider mb-4 border-b border-slate-700 pb-2"><i class="fa-solid fa-building mr-2"></i>Target Companies (Select Multiple)</h2>
+            <div class="flex flex-wrap gap-2" id="company-container">
+                <button class="comp-chip border border-slate-600 bg-slate-700 rounded-full px-4 py-1 text-sm text-slate-200 cursor-pointer transition-all" data-val="Nokia">Nokia</button>
+                <button class="comp-chip border border-slate-600 bg-slate-700 rounded-full px-4 py-1 text-sm text-slate-200 cursor-pointer transition-all" data-val="Ericsson">Ericsson</button>
+                <button class="comp-chip border border-slate-600 bg-slate-700 rounded-full px-4 py-1 text-sm text-slate-200 cursor-pointer transition-all" data-val="BT">BT / EE</button>
+                <button class="comp-chip border border-slate-600 bg-slate-700 rounded-full px-4 py-1 text-sm text-slate-200 cursor-pointer transition-all" data-val="Vodafone">Vodafone</button>
+                <button class="comp-chip border border-slate-600 bg-slate-700 rounded-full px-4 py-1 text-sm text-slate-200 cursor-pointer transition-all" data-val='"Virgin Media O2"'>Virgin Media O2</button>
+                <button class="comp-chip border border-slate-600 bg-slate-700 rounded-full px-4 py-1 text-sm text-slate-200 cursor-pointer transition-all" data-val="Spirent">Spirent</button>
+                <button class="comp-chip border border-slate-600 bg-slate-700 rounded-full px-4 py-1 text-sm text-slate-200 cursor-pointer transition-all" data-val="Keysight">Keysight</button>
+                <button class="comp-chip border border-slate-600 bg-slate-700 rounded-full px-4 py-1 text-sm text-slate-200 cursor-pointer transition-all" data-val="Cisco">Cisco</button>
+                <button class="comp-chip border border-slate-600 bg-slate-700 rounded-full px-4 py-1 text-sm text-slate-200 cursor-pointer transition-all" data-val="Juniper">Juniper</button>
+                <button class="comp-chip border border-slate-600 bg-slate-700 rounded-full px-4 py-1 text-sm text-slate-200 cursor-pointer transition-all" data-val="Colt">Colt Tech</button>
+            </div>
+        </div>
+
+        <button id="generate-btn" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-4 rounded-xl transition-all shadow-lg shadow-emerald-900/20 text-lg flex items-center justify-center">
+            <i class="fa-solid fa-radar mr-2" id="btn-icon"></i> <span id="btn-text">SCRAPE LINKEDIN NOW</span>
+        </button>
+
+        <!-- RESULTS TABLE -->
+        <div id="job-count" class="mt-8 mb-4 text-sm font-semibold text-emerald-400 hidden"></div>
+        <div class="overflow-x-auto bg-slate-800 border border-slate-700 rounded-xl shadow-xl mt-4">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="bg-slate-700/50 text-slate-300 text-sm">
+                        <th class="p-4 border-b border-slate-600 w-1/5">Company & Role</th>
+                        <th class="p-4 border-b border-slate-600 w-1/2">Mandate Summary</th>
+                        <th class="p-4 border-b border-slate-600 w-[10%]">Hiring Contact</th>
+                        <th class="p-4 border-b border-slate-600 text-center w-[8%]">Action</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm" id="results-body">
+                    <tr>
+                        <td colspan="4" class="p-8 text-center text-slate-500">
+                            Select a role, toggle your filters, and click Scrape.
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
